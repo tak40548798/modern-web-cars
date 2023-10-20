@@ -10,6 +10,7 @@ export async function fetchCars(filters: FilterProps) {
   };
   const response = await fetch(url, { headers: headers });
   const result = await response.json();
+
   return result;
 }
 
@@ -42,6 +43,7 @@ export const generateCarImageUrl = (car: CarProps, angle?: string) => {
 };
 
 export const updateSearchParams = (type: string, value: string) => {
+  console.log(type,value)
   const searchParams = new URLSearchParams(window.location.search);
   searchParams.set(type, value);
 

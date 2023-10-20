@@ -5,39 +5,6 @@ import { HomeProps } from "@/types";
 import Image from "next/image";
 
 export default async function Home({ searchParams }: HomeProps) {
-  /*
-  const [loading, setLoading] = useState(false);
-  const [allCars, setAllCars] = useState([]);
-  // search
-  const [manufacturer, setManuFacturer] = useState("");
-  const [model, setModel] = useState("");
-  // filter
-  const [fuel, setFuel] = useState("");
-  const [year, setYear] = useState(2022);
-
-  const [limit, setLimit] = useState(10);
-
-  const getCars = async () => {
-    setLoading(true);
-    try {
-      const result = await fetchCars({
-        manufacturer: manufacturer || "",
-        year: year || 2022,
-        fuel: fuel || "",
-        limit: limit || 10,
-        model: model || "",
-      });
-      setAllCars(result);
-    } catch (error) {
-      console.log(error);
-    } finally {
-      setLoading(false);
-    }
-  };
-  useEffect(() => {
-    getCars();
-  }, [fuel, year, limit, manufacturer, model]);
-  */
 
   const allCars = await fetchCars({
     manufacturer: searchParams.manufacturer || "",
